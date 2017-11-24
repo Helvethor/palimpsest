@@ -32,9 +32,9 @@ DEFAULT_CONFIG = {
 	'resources_file': 'resources.json',
 	'src_dir': 'src',
 	'out_dir': 'out',
-	'force': 'false',
-	'daemon': 'false',
-	'debug': 'false'
+	'force': False,
+	'daemon': False,
+	'debug': False
 }
 
 
