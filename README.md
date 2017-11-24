@@ -42,6 +42,7 @@ will be processed and output to `out/hillbilly.lua`:
 ## How to use it?
 
 `palimpsest --src-dir path/to/src --out-dir path/to/out --resources-file path/to/resources.json`
+
 You can also enable daemonized mode with --daemon. This will continuously watch for changes and update your `out` directory accordingly.
 
 For more options:
