@@ -43,7 +43,7 @@ will be processed and output to `out/hillbilly.lua`:
 
 `palimpsest --src-dir path/to/src --out-dir path/to/out --resources-file path/to/resources.json`
 
-You can also enable daemonized mode with --daemon. This will continuously watch for changes and update your `out` directory accordingly.
+You can also enable daemonized mode with `--daemon`. This will continuously watch for changes and update your `out` directory accordingly.
 
 For more options:
 
@@ -52,3 +52,7 @@ For more options:
 You can save all your command line options in a JSON file and pass it with --config-file.
 
 An example configuration and resources file is included.
+
+## Copying
+
+This software is licensed under GNU General Public License. See `COPYING` for more informations.
