@@ -1,0 +1,8 @@
+{
+	"resources-files": "resources.json",
+	"src_dir": "src",
+	"out_dir": "out",
+	"force": false,
+	"daemon": true,
+	"debug": false
+}

@@ -1,0 +1,11 @@
+{
+	"thelord": "géronimo",
+	"yes": "no",
+	"abc": "ABC",
+	"a": {
+		"b": {
+			"c": "ABC"
+		},
+		"b.d": "ABD"
+	}
+}
