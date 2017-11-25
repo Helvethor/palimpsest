@@ -126,7 +126,6 @@ class FileSyncer(PathSyncer):
 		try:
 			shutil.copy2(self.to_src(), self.to_out())
 		except Exception as e:
-			log.debug(self.to_src())
 			log.warn(e)
 			return False
 		return True
@@ -164,7 +163,9 @@ class SymlinkSyncer(PathSyncer):
 
 		log.debug(f'syncing symlink {self.w_path}')
 		if self.is_symlink(src_symlink):
-			self.remove(out_symlink)
+			if os.path.lexists(out_symlink):
+				log.debug(f'remove {out_file}')
+				self.remove(out_symlink)
 			if not self.copy():
 				log.warn(f'could not copy {self.w_path}')
 				return False
@@ -182,12 +183,15 @@ class SymlinkSyncer(PathSyncer):
 		return self.check_target()
 
 	def check_target(self):
-		src_link = os.readlink(self.to_src())
-		out_link = os.readlink(self.to_out())
-		if os.path.realpath(self.to_src()) == os.path.realpath(self.to_out()):
-			return True
-		elif src_link == out_link:
-			return True
+		try:
+			src_link = os.readlink(self.to_src())
+			out_link = os.readlink(self.to_out())
+			if os.path.realpath(self.to_src()) == os.path.realpath(self.to_out()):
+				return True
+			elif src_link == out_link:
+				return True
+		except:
+			return False
 		return False
 
 

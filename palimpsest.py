@@ -17,7 +17,7 @@
 
 from binaryornot.check import is_binary
 import logging
-import syncer
+from palimpsest import syncer
 import re
 
 
